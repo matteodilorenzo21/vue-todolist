@@ -44,15 +44,18 @@
                 <h3 class="mb-3 text-center">Cose da fare</h3>
                 <h4 v-if="!tasks.length" class="text-center my-5 text-secondary">Sembra che tu abbia completato tutte le tue task</h4>
                 <ul class="list-group">
+
                     <li v-for="(task, i) in tasks" class="list-group-item d-flex justify-content-between align-items-center">{{ task.text }}
                         <button @click="removeTask(i)" type="button" class="btn-close"></button>
                     </li>
+
                     <li class="list-group-item">
                         <div class="input-group">
-                            <input v-model="newTask" type="text" class="form-control" placeholder="Scrivi una nuova task..">
-                            <button @click="addTask()" class="btn btn-outline-success">Aggiungi</button>
-                        </div>
+                            <input v-model="newTask" @keyup.enter="addTask" type="text" class="form-control" placeholder="Scrivi una nuova task..">
+                            <button @click="addTask" class="btn btn-outline-success">Aggiungi</button>
+                          </div>                          
                     </li>
+
                 </ul>
 
             </main>

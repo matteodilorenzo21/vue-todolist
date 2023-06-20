@@ -34,8 +34,9 @@ const app = Vue.createApp({
           text: this.newTask,
           done: false,
         });
-        this.newTask = ''; // Resetta il campo di input dopo l'aggiunta della task
-      },
+        // Resetta il campo di input dopo l'aggiunta della task
+        this.newTask = '';
+      }
     },
   });
   
